@@ -14,7 +14,7 @@ let conf = require('./config/testData.js');
 let allRows = [];
 const getDataForObj = (obj) => {
   conf.questions.forEach((q) => {
-    let line = { user: obj['User'], question: q, response: obj[q] };
+    let line = { token: obj[conf.tokenCol], question: q, response: obj[q] };
     allRows.push(line);
   });
 };
