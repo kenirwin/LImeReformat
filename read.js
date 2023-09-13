@@ -6,10 +6,21 @@
   response
 */
 
-let csvFilePath = './data/temp.csv';
 const csv = require('csvtojson');
 let converter = require('json-2-csv');
-let conf = require('./config/testData.js');
+let csvFilePath;
+
+// get config from command line
+if (process.argv.length > 2) {
+  const confName = process.argv[2];
+  const conf = require('./config/' + confName + '.js');
+  csvFilePath = './data/' + conf.filename;
+} else {
+  console.log(
+    'No config specified; run this command as `node read.js <configName>`'
+  );
+  process.exit(1);
+}
 
 let allRows = [];
 const getDataForObj = (obj) => {
@@ -25,13 +36,12 @@ const getDataForObj = (obj) => {
   });
 };
 
-// const questions = ['Question1', 'Question2', 'Question3'];
 (async () => {
   const jsonArray = await csv().fromFile(csvFilePath);
   jsonArray.forEach((row) => {
     getDataForObj(row);
   });
-  // console.log(allRows);
+  // convert back to csv
   const output = await converter.json2csv(allRows, {});
   console.log(output);
 })();
