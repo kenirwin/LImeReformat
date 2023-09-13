@@ -14,7 +14,13 @@ let conf = require('./config/testData.js');
 let allRows = [];
 const getDataForObj = (obj) => {
   conf.questions.forEach((q) => {
-    let line = { token: obj[conf.tokenCol], question: q, response: obj[q] };
+    let line = {
+      token: obj[conf.tokenCol] || '',
+      date: obj[conf.dateCol] || '',
+      ip: obj[conf.ip] || '',
+      question: q,
+      response: obj[q],
+    };
     allRows.push(line);
   });
 };
