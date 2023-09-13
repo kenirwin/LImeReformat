@@ -1,5 +1,5 @@
 - add a csv file to the `data` folder
-- create a config file that includes:
+- create a `config/<filename>.js` file that includes:
 
   ```
   conf = {
