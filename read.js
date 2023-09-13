@@ -6,7 +6,7 @@
   response
 */
 
-let csvFilePath = './temp.csv';
+let csvFilePath = './data/temp.csv';
 const csv = require('csvtojson');
 let converter = require('json-2-csv');
 
