@@ -1,14 +1,7 @@
-/*
-  token,
-  date of last action,
-  ip address,
-  question identifier,
-  response
-*/
-
 const csv = require('csvtojson');
 let converter = require('json-2-csv');
 let csvFilePath;
+let allRows = [];
 
 // get config from command line
 if (process.argv.length > 2) {
@@ -22,7 +15,7 @@ if (process.argv.length > 2) {
   process.exit(1);
 }
 
-let allRows = [];
+// reformating function
 const getDataForObj = (obj) => {
   conf.questions.forEach((q) => {
     let line = {
@@ -36,6 +29,7 @@ const getDataForObj = (obj) => {
   });
 };
 
+// run the script: read file, convert to json, reformat, convert back to csv
 (async () => {
   const jsonArray = await csv().fromFile(csvFilePath);
   jsonArray.forEach((row) => {
