@@ -22,5 +22,5 @@ if (process.argv.length > 2) {
   const jsonArray = await csv().fromFile(csvFilePath);
   let first = jsonArray[0];
   let props = Object.getOwnPropertyNames(first);
-  console.log(props);
+  console.log(JSON.stringify(props, null, 2));
 })();
