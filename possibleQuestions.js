@@ -1,8 +1,9 @@
-const csv = require('csvtojson');
-let converter = require('json-2-csv');
-const fs = require('fs');
-const readline = require('readline');
+/*
+This script extracts the possible questions from a csv file based on the header row.
+Output can be used to create the questions property in a config file.
+*/
 
+const csv = require('csvtojson');
 let csvFilePath;
 
 // get config from command line
