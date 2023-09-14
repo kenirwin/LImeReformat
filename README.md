@@ -1,3 +1,26 @@
+# LimeReformatter
+
+This is a command-line tool to reformat long lines of csv data into question/answer pairs, plus some identifying metadata for each entry.
+
+## Example
+
+### Input
+
+```
+Name,Date,IP,Question1,Question2,Question3
+Jared,2023-09-01,123.456.789.012,Answer1,Answer2,Answer3
+```
+
+### Output
+
+```
+Jared,2023-09-01,123.456.789.012,Question1,Answer1
+Jared,2023-09-01,123.456.789.012,Question2,Answer2
+Jared,2023-09-01,123.456.789.012,Question3,Answer3
+```
+
+## Usage
+
 - add a csv file to the `data` folder
 - create a `config/<filename>.js` file that includes:
 
