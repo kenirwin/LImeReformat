@@ -1,8 +1,6 @@
 {
   "dependencies": {
-    "csv-parse": "^5.5.0",
     "csvtojson": "^2.0.10",
-    "json-2-csv": "^4.1.0",
-    "jsoncsv": "^0.1.2"
+    "json-2-csv": "^4.1.0"
   }
 }
